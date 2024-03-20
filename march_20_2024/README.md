@@ -1,16 +1,12 @@
 # Python Basic Logical Practices
 
-### EN - Before running the answer code for any question, please convert all other question-answer pairs into multi-line comments.
-
-### TR - Herhangi bir sorunun cevap kodu çalıştırmadan önce lütfen diğer soru cevaplarını çoklu yorum satırı haline getiriniz
-
 This repository contains solutions to five fundamental Python logic practices mostly with inputs, including:
 
 - Body Mass Index (BMI) Calculator
 - Salary Raise Rate Calculator
 - Finding The Biggest Number
 - Finding The Area and Circumference Of A Circle
-- Checking If Input Is Palindrom
+- Checking If Input Is Palindrome
 
 These problems are designed to practice essential Python concepts like:
 
@@ -19,4 +15,9 @@ These problems are designed to practice essential Python concepts like:
 - User input/output
 - Loops (for, while)
 
-_Feel Free to clone this repository_
+## Notes Before Using
+
+- Feel Free to clone this repository
+- EN - Before running the answer code for any question, please convert all other question-answer pairs into multi-line comments\*\*
+
+- TR - Herhangi bir sorunun cevap kodu çalıştırmadan önce lütfen diğer soru cevaplarını çoklu yorum satırı haline getiriniz\*\*
