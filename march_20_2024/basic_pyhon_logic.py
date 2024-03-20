@@ -30,6 +30,14 @@ EN 2-Calculate the increased salary of the worker whose salary and increase rate
 *****
 """
 
+salary = int(input("Please enter your monthly salary: \n"))
+raise_rate = float(input("Please enter the last salary increase you received: \n"))
+current_salary = salary + (salary * (raise_rate / 100))
+hr_message = f"Your current salary is: {current_salary} \n if it seems like low please knock on your boss's door \n Otherwise, we wish you happiness until the next hike period..."
+print(hr_message)
+
+
+
 """
 TR 3-Kullanıcının girdiği üç sayı arasında en büyük olanı bulan ve sonucu yazdıran bir program yazınız.
 ***
