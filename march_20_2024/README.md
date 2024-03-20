@@ -4,7 +4,7 @@
 
 ### TR - Herhangi bir sorunun cevap kodu çalıştırmadan önce lütfen diğer soru cevaplarını çoklu yorum satırı haline getiriniz
 
-This repository contains solutions to five fundamental Python logic practice mostly with inputs, including:
+This repository contains solutions to five fundamental Python logic practices mostly with inputs, including:
 
 - Body Mass Index (BMI) Calculator
 - Salary Raise Rate Calculator
@@ -17,5 +17,6 @@ These problems are designed to practice essential Python concepts like:
 - Conditional statements (if/else)
 - Mathematical operations
 - User input/output
+- Loops (for, while)
 
 _Feel Free to clone this repository_
