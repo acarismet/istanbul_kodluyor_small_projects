@@ -5,6 +5,7 @@ EN 1-Calculate the body mass index (BMI = weight/(height*height)) according to t
 *****
 """
 """
+print("\n *** Let's see how fit you are...\n")
 height = float(input("Please enter your height: \n"))
 weight = float(input("Please enter your weight: \n"))
 bmi = weight / (height ** 2)
@@ -30,6 +31,7 @@ EN 2-Calculate the increased salary of the worker whose salary and increase rate
 *****
 """
 """
+print("\n *** Let's how your new salary is satisfied for you...\n")
 salary = int(input("Please enter your monthly salary: \n"))
 raise_rate = float(input("Please enter the last salary increase you received: \n"))
 current_salary = salary + (salary * (raise_rate / 100))
@@ -44,8 +46,8 @@ TR 3-Kullanıcının girdiği üç sayı arasında en büyük olanı bulan ve so
 EN 3-Write a program that finds the largest of the three numbers entered by the user and prints the result.
 *****
 """
-
-print("We'll check which number is the biggest among three numbers you'll give \n")
+"""
+print("\n *** We'll check which number is the biggest among three numbers you'll give \n")
 num1 = int(input("Please enter first number: "))
 num2 = int(input("Please enter second number: "))
 num3 = int(input("Please enter third number: "))
@@ -73,7 +75,7 @@ else:
     else:
         top_num = num1
         print ("You gave all your numbers as same \n Therefore there can't be the biggest with these inputs...")
-
+"""
 
 """
 TR 4-Dairenin alanını ve çevresini hesaplayan python kodunu yazınız.(Dairenin yarıçapını kullanıcıdan alınız)
@@ -81,6 +83,14 @@ TR 4-Dairenin alanını ve çevresini hesaplayan python kodunu yazınız.(Dairen
 EN 4-Write the python code that calculates the area and circumference of the circle.(Get the radius of the circle from the user)
 *****
 """
+
+print("\n *** We'll find out are and circumference of circle according to your radius input...\n ")
+pi = 3.14159
+radius = float(input("Please enter radius you like: "))
+c_area = pi * (radius ** 2)
+c_circumference = 2 * pi * radius
+cal_message = f"\n Circle's area is: {c_area} \n Circle's circumference is: {c_circumference}\n"
+print (cal_message)
 
 
 """
