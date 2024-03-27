@@ -1,3 +1,7 @@
+import os
+def clear():
+    os.system('clear')
+
 from students import Student
 from teachers import Teacher
 
@@ -80,6 +84,7 @@ def update_teacher(teachers, id):
     print("\n\t*\tTeacher not found.\t*\n")
 
 def main():
+    clear()
     students = []
     teachers = []
 
