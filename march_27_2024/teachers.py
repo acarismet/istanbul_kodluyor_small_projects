@@ -13,5 +13,5 @@ class Teacher:
         if field:
             self.field = field
 
-    def __str__(self):
+    def __str__(self): # For list display
         return f"Teacher ID: {self.id}, Name: {self.first_name} {self.last_name}, Field: {self.field}"

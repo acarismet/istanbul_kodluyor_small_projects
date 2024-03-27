@@ -13,5 +13,5 @@ class Student:
         if grade:
             self.grade = grade
 
-    def __str__(self):
+    def __str__(self): # For list display
         return f"Student ID: {self.id}, Name: {self.first_name} {self.last_name}, Grade: {self.grade}"
