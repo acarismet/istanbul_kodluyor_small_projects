@@ -11,7 +11,7 @@ def print_student_list(student):
 
 def print_teacher_list(teacher):
     if len(teacher) >= 1: # if there is none then don't show
-        print("\n\t ** STUDENTS ** \n")
+        print("\n\t ** TEACHERS ** \n")
         for i in teacher:
             print(i)
     else:
@@ -84,48 +84,50 @@ def main():
     teachers = []
 
     while True:
-        category = input("\n Which list do you want to work on? (s)students or (t)teachers: ")
-        if category == 's':
-            while True:
-                print_student_list(students)
-                action = input("\n What do you want to do? (a)Add, (r)Remove, (u)Update: ")
-                if action == 'a':
-                    add_student(students)
-                elif action == 'r':
-                    student_id = input("\n Enter student ID to remove: ")
-                    remove_student(students, student_id)
-                elif action == 'u':
-                    student_id = input("\n Enter student ID to update: ")
-                    update_student(students, student_id)
-                else:
-                    print("\n Invalid input. Please enter 'a', 'r', or 'u'.")
+        try: 
+            category = input("\n Which list do you want to work on? (s)students or (t)teachers: ")
+            if category == 's':
+                while True:
+                    print_student_list(students)
+                    action = input("\n What do you want to do? (a)Add, (r)Remove, (u)Update: ")
+                    if action == 'a':
+                        add_student(students)
+                    elif action == 'r':
+                        student_id = input("\n Enter student ID to remove: ")
+                        remove_student(students, student_id)
+                    elif action == 'u':
+                        student_id = input("\n Enter student ID to update: ")
+                        update_student(students, student_id)
+                    else:
+                        print("\n Invalid input. Please enter 'a', 'r', or 'u'.")
 
-                continue_option = input("\n Do you want to do anything else on the same list? (y/n): ")
-                if continue_option.lower() != 'y':
-                    break
-            
-        elif category == 't':
-            while True:
-                print_teacher_list(teachers)
-                action = input("\n What do you want to do? (a)Add, (r)Remove, (u)Update: ")
-                if action == 'a':
-                    add_teacher(teachers)
-                elif action == 'r':
-                    teacher_id = input("\n Enter teacher ID to remove: ")
-                    remove_teacher(teachers, teacher_id)
-                elif action == 'u':
-                    teacher_id = input("\n Enter teacher ID to update: ")
-                    update_teacher(teachers, teacher_id)
-                else:
-                    print("\n Invalid input. Please enter 'a', 'r', or 'u'.")
+                    continue_option = input("\n Do you want to do anything else on the same list? (y/n): ")
+                    if continue_option.lower() != 'y':
+                        break
+                
+            elif category == 't':
+                while True:
+                    print_teacher_list(teachers)
+                    action = input("\n What do you want to do? (a)Add, (r)Remove, (u)Update: ")
+                    if action == 'a':
+                        add_teacher(teachers)
+                    elif action == 'r':
+                        teacher_id = input("\n Enter teacher ID to remove: ")
+                        remove_teacher(teachers, teacher_id)
+                    elif action == 'u':
+                        teacher_id = input("\n Enter teacher ID to update: ")
+                        update_teacher(teachers, teacher_id)
+                    else:
+                        print("\n Invalid input. Please enter 'a', 'r', or 'u'.")
 
-                continue_option = input("\n Do you want to do anything else on the same list? (y/n): ")
-                if continue_option.lower() != 'y':
-                    break
-            
-        else:
-            print("\n Invalid input. Please enter 's' or 't'.")
-
+                    continue_option = input("\n Do you want to do anything else on the same list? (y/n): ")
+                    if continue_option.lower() != 'y':
+                        break
+                
+            else:
+                print("\n Invalid input. Please enter 's' or 't'.")
+        except KeyboardInterrupt:
+            break
 
 
 if __name__ == "__main__":
