@@ -6,7 +6,7 @@ import product_class
 
 def add(product_list, product_name, unit_cost, unit_price, category):
     id = f"{len(product_list) + 1:04d}"
-    product = product_class.Products(id,product_name, unit_cost, unit_price, category)
+    product = product_class.Products(id,product_name, unit_cost, unit_price, category)  
     product_list.append(product)
     
 
