@@ -30,3 +30,13 @@ The program maintains separate lists for students and teachers. Users can choose
 ## Contributing
 
 Feel free to fork this repository and contribute improvements!
+
+<br>
+
+### Important Note For `reorder` function in `main.py`
+
+<hr>
+
+- [EN] Previously, I used the following expression directly without writing enumerate `list_param[i].id = f "S{i + 1:03d}"`` but the problem was that calling from its index points to the reference value of the list element, not the list element itself. print() can be done, but there is no assignment to its own value.
+
+- [TR] Daha önce enumerate yazmadan direkt şu ifadeyi kullandım `list_param[i].id = f"S{i + 1:03d}"`` fakat problem şuymuş. indisinden çağırmak liste elemanının kendisine değil referans değerine işaret ediyor. print() yapılabilirken kendi değerine bir atama söz konusu değildir.

@@ -18,7 +18,7 @@ def display(product_list):
 
 
 def main():
-    clear()
+    #clear()
     product_list = []
     while True:
         p_name = input("\n Enter new product name: ")

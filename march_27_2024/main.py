@@ -5,6 +5,10 @@ def clear():
 from students import Student
 from teachers import Teacher
 
+def reorder(list_param):
+    for i, j in enumerate(list_param):  # Iterate over elements and their indices/ key-value olarak dönmeye başlıyor
+        j.id = f"S{i + 1:03d}"  # Update ID based on index. index + 1'i de nesnenin id'sine eşitleyecek.
+
 def print_student_list(student):
     if len(student) >= 1: # if there is none then don't show
         print("\n\t ** STUDENTS ** \n")
@@ -57,6 +61,7 @@ def remove_teacher(teachers, id):
             print("\n\t*\tTeacher removed successfully.\t*\n")
             print_teacher_list(teachers)
             return
+
     print("\n\t*\tTeacher not found.\t*\n")
 
 def update_student(students, id):
@@ -100,6 +105,7 @@ def main():
                     elif action == 'r':
                         student_id = input("\n Enter student ID to remove: ")
                         remove_student(students, student_id)
+                        reorder(students)
                     elif action == 'u':
                         student_id = input("\n Enter student ID to update: ")
                         update_student(students, student_id)
@@ -119,6 +125,7 @@ def main():
                     elif action == 'r':
                         teacher_id = input("\n Enter teacher ID to remove: ")
                         remove_teacher(teachers, teacher_id)
+                        reorder(teachers)
                     elif action == 'u':
                         teacher_id = input("\n Enter teacher ID to update: ")
                         update_teacher(teachers, teacher_id)
