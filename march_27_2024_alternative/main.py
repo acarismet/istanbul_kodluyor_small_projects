@@ -4,9 +4,9 @@ def clear():
 
 import product_class
 
-def add(product_list, product_name, unit_cost, unit_price, category):
+def add(product_list, p_name, u_cost, u_price, p_category):
     id = f"{len(product_list) + 1:04d}"
-    product = product_class.Products(id,product_name, unit_cost, unit_price, category)  
+    product = product_class.Products(id,p_name, u_cost, u_price, p_category)  
     product_list.append(product)
     
 
@@ -21,11 +21,11 @@ def main():
     clear()
     product_list = []
     while True:
-        product_name = input("\n Enter new product name: ")
-        unit_cost = input("\n Enter new unit cost: ")
-        unit_price = input("\n Enter new unit price : ")
-        category = input("\n Enter new category: ")
-        add(product_list, product_name, unit_cost, unit_price,category)
+        p_name = input("\n Enter new product name: ")
+        u_cost = input("\n Enter new unit cost: ")
+        u_price = input("\n Enter new unit price : ")
+        p_category = input("\n Enter new p_category: ")
+        add(product_list, p_name, u_cost, u_price,p_category)
         display(product_list)
 
 if __name__ == "__main__":
