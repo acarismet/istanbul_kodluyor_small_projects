@@ -70,9 +70,53 @@ class HWSelenium:
         test_result = total_prod_card == 6
         print(f"Valid Login and Counting Prods In Screen | Is it 6 :  {test_result}")
 
+    def adding_removing_prod_to_cart(self):
+        sleep(1)
+        self.driver.refresh()
+        WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located((By.ID, "user-name")))
+        username = self.driver.find_element(By.ID, "user-name")
+        username.send_keys("standard_user")
+        WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located((By.ID, "password")))
+        password = self.driver.find_element(By.NAME, "password")
+        password.send_keys("secret_sauce")
+        WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located((By.ID, "login-button")))
+        login_button = self.driver.find_element(By.ID, "login-button")
+        login_button.click()
+        sleep(1)
+
+        WebDriverWait(self.driver, 5).until(
+            expected_conditions.visibility_of_element_located((By.ID, "add-to-cart-sauce-labs-backpack")))
+        add_backpack = self.driver.find_element(By.ID, "add-to-cart-sauce-labs-backpack")
+        add_backpack.click()
+        WebDriverWait(self.driver, 5).until(
+            expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"shopping_cart_container\"]/a")))
+        cart_button = self.driver.find_element(By.XPATH, "//*[@id=\"shopping_cart_container\"]/a")
+        cart_button.click()
+        WebDriverWait(self.driver, 5).until(
+            expected_conditions.visibility_of_element_located((By.CLASS_NAME, "cart_item")))
+        cart_items = self.driver.find_elements(By.CLASS_NAME, "cart_item")
+        amount_in_cart = len(cart_items)
+        assert amount_in_cart
+        print("First product added to cart")
+        sleep(4)
+
+        WebDriverWait(self.driver, 5).until(
+            expected_conditions.visibility_of_element_located((By.ID, "remove-sauce-labs-backpack")))
+        remove_backpack = self.driver.find_element(By.ID, "remove-sauce-labs-backpack")
+        remove_backpack.click()
+        sleep(3)
+        self.driver.refresh()
+        cart_items = self.driver.find_elements(By.CLASS_NAME, "cart_item")
+        amount_in_cart = len(cart_items)
+        if amount_in_cart == 0:
+            print("Cart is empty")
+        else:
+            print("DEFECT: Product removing failed...")
+
 
 testClass = HWSelenium()
 testClass.invalid_login_without_input()
 testClass.invalid_login_without_pw()
 testClass.invalid_login_by_blocking_user()
 testClass.valid_login_checking_prod_amount()
+testClass.adding_removing_prod_to_cart()
